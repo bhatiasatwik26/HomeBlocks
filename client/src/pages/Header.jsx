@@ -7,8 +7,7 @@ const Header = () => {
         <div className="container flex justify-between items-center p-4 ">
             <h1 className='text-2xl font-semibold'>
                 <span className='text-slate-700'>Home</span>
-                <span className='text-slate-600'>|</span>
-                <span className='text-slate-500'>Blocks</span>
+                <span className='text-slate-500'>Blocs</span>
             </h1>
             <form className='bg-slate-200 flex items-center justify-between px-3 py-2 rounded-lg w-1/2'>
                 <input type="text" placeholder='Search...' className='bg-transparent outline-none flex-1'/>
