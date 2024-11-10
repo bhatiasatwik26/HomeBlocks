@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react';
+import OAuth from './OAuth';
 
 const SignUp = () => {
 
@@ -14,7 +15,6 @@ const SignUp = () => {
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
         setDisabled(true);
         const res = await fetch('/api/auth/signup', {
           method: 'POST',
@@ -32,7 +32,6 @@ const SignUp = () => {
           navigate('/sign-in');
         }
         setDisabled(false);
-        console.log(data);
         }
     return (
     <div>
@@ -43,6 +42,7 @@ const SignUp = () => {
         <input type="text" placeholder='Password' id='password' onChange={handleChange} className='border border-slate-300 p-3 rounded-lg outline-slate-400'/>
         <p className='text-red-500 font-semibold text-md text-center leading-tight'>{error  ? error : ""}</p>
         <button disabled={disabled} className='bg-slate-700 text-white p-2 rounded-md hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed'>{disabled ? 'Submitting' : 'Sign Up'}</button>
+        <OAuth />
         <p className='text-slate-700'>Have an account? <Link className='text-blue-500 underline underline-offset-2 hover:text-blue-600'>Sign-in</Link> instead</p>
       </form>
     </div>
